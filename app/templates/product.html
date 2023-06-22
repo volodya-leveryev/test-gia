@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main">
+        <div class="sidebar">
+            {% if product.photo_large %}
+            <img src="{{ url_for('static', filename=product.photo_large) }}" alt="Фото телефона">
+            {% endif %}
+        </div>
+        <div class="content">
+            <h1>{{ product.brand }} {{ product.model }}</h1>
+            <div>
+                {{ product.description }}
+            </div>
+            <p>
+                <a href="{{ url_for('index_page') }}">Назад</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
